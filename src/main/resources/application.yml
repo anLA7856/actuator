@@ -55,7 +55,7 @@ logging:
 mybatis:
     type-aliases-package: com.gzuni.actuator.model
     mapper-locations:
-        - classpath:mappers/*.xml
+        - classpath:mappers/manu/*.xml
 
 mapper:
     mappers:

@@ -34,4 +34,6 @@ import tk.mybatis.mapper.common.MySqlMapper;
 public interface ActuatorMapper<T> extends Mapper<T>, MySqlMapper<T> {
     //TODO
     //FIXME 特别注意，该接口不能被扫描到，否则会出错
+    //因为一旦被扫描到，mybatis就会把相应的mapper.xml文件加载进来，并且还会把其父类的也加载进来
+    //所以在tk包父类中，会有相冲突的方法id。
 }

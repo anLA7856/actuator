@@ -14,7 +14,7 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <result column="SQL" jdbcType="CLOB" property="sql" />
+    <result column="SQL" jdbcType="LONGVARCHAR" property="sql" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <!--
@@ -165,7 +165,7 @@
         STATUS = #{record.status,jdbcType=DECIMAL},
       </if>
       <if test="record.sql != null">
-        SQL = #{record.sql,jdbcType=CLOB},
+        SQL = #{record.sql,jdbcType=LONGVARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -181,7 +181,7 @@
       SYSTEM_TYPE = #{record.systemType,jdbcType=VARCHAR},
       BUSINESS_KEY = #{record.businessKey,jdbcType=VARCHAR},
       STATUS = #{record.status,jdbcType=DECIMAL},
-      SQL = #{record.sql,jdbcType=CLOB}
+      SQL = #{record.sql,jdbcType=LONGVARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>

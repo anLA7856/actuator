@@ -35,7 +35,7 @@
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="mappers" targetProject="${dao.resources.dir}">
+        <sqlMapGenerator targetPackage="mappers.tk" targetProject="${dao.resources.dir}">
             <property name="enableSubPackages" value="true" />
         </sqlMapGenerator>
 
