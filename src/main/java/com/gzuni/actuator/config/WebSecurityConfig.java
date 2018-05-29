@@ -37,7 +37,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .antMatchers("/oauth/*").permitAll();
         }
 
-
     @Bean
     @Override
     protected UserDetailsService userDetailsService(){

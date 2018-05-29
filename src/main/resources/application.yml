@@ -1,0 +1,70 @@
+server:
+  port: 8080
+  tomcat:
+    accesslog:
+      enabled: true
+  basedir: target/tomcat
+
+spring:
+  application:
+    name: actuator
+  datasource:
+    druid:
+      url: jdbc:oracle:thin:@//db12.gz.gd.unicom.local:1521/gzdb
+      username: luoa
+      password: luoa#0956
+      driver_class_name: oracle.jdbc.driver.OracleDriver
+      maxActive: 5
+      initialSize: 1
+      maxWait: 60000
+      minIdle: 3
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: select 1 from dual
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
+      filter:
+        stat:
+          enabled: false
+        wall:
+          enabled: false
+
+  thymeleaf:
+    cache: false
+
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+swagger2:
+  api-path: /
+
+debug: true
+
+logging:
+  level:
+    tk.mybatis: DEBUG
+    com.gzuni.actuator.model.mapper: DEBUG
+    com.gzuni.actuator.model.extend: DEBUG
+  file: logs/actuator.log
+
+mybatis:
+    type-aliases-package: com.gzuni.actuator.model
+    mapper-locations:
+        - classpath:mappers/*.xml
+
+mapper:
+    mappers:
+        - com.gzuni.actuator.utils.ActuatorMapper
+    not-empty: false
+
+pagehelper:
+    helperDialect: oracle
+    reasonable: true
+    pageSizeZero: true
+    supportMethodsArguments: true
+    params: count=countSql

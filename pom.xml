@@ -24,7 +24,7 @@
 		<java.version>1.8</java.version>
 		<mapper.version>4.0.0</mapper.version>
 		<oracle.version>11.2.0.4</oracle.version>
-		<entity.target.dir>src/main/java/</entity.target.dir>
+		<entity.target.dir>src/main/java/</entity.target.dir>       <!--mybatis-generator里面调用-->
 		<dao.resources.dir>src/main/resources/</dao.resources.dir>
 	</properties>
 

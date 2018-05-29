@@ -3,7 +3,6 @@ package com.gzuni.actuator.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.*;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
@@ -34,9 +33,6 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
         return  viewResolver;  
     }
 
-
-
-
     /**
      * 使配置生效
      */
@@ -45,9 +41,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
             DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
     }
-    
 
-    
     /**
      * 映射静态文件
      */
